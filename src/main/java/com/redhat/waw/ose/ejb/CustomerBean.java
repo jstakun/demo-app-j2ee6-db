@@ -16,7 +16,7 @@ import com.redhat.waw.ose.model.Customer;
 @LocalBean
 public class CustomerBean {
 
-	@PersistenceContext(unitName="dbj2ee")
+	@PersistenceContext(unitName="crm")
 	private EntityManager em;
 		
 	public List<Customer> getCustomers() {
