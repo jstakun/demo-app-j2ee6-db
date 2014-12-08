@@ -3,6 +3,7 @@ package com.redhat.waw.ose.service;
 import java.util.List;
 
 import javax.ejb.EJB;
+import javax.ejb.Stateless;
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.GET;
 import javax.ws.rs.PUT;
@@ -15,6 +16,7 @@ import javax.ws.rs.core.MediaType;
 import com.redhat.waw.ose.ejb.CustomerBean;
 import com.redhat.waw.ose.model.Customer;
 
+@Stateless
 @Path("customers")
 public class CustomerService {
 
