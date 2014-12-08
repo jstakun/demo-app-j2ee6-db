@@ -62,4 +62,10 @@ jboss-eap-*-maven-repository/org/jboss/spec/jboss-javaee-6.0
 			</build>
 		</profile>
 	</profiles>
+	<repositories>
+      	<repository>
+			<id>JBoss repository</id>
+			<url>http://192.168.122.1:8081/nexus/content/repositories/redhat.ga/</url>
+      	</repository>
+    </repositories>
 </project>
