@@ -74,6 +74,9 @@
 			<logger category="jacorb">
 				<level name="WARN" />
 			</logger>
+			<logger category="com.redhat.waw">
+				<level name="INFO" />
+			</logger>
 			<logger category="jacorb.config">
 				<level name="ERROR" />
 			</logger>

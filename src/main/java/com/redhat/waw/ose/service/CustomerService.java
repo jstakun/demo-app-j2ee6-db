@@ -1,6 +1,8 @@
 package com.redhat.waw.ose.service;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -20,12 +22,15 @@ import com.redhat.waw.ose.model.Customer;
 @Path("customers")
 public class CustomerService {
 
+	private static final Logger logger = Logger.getLogger(CustomerService.class.getName());
+	
 	@EJB
 	private CustomerBean bean;
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Customer> getAllCustomers() {
+		logger.log(Level.INFO, "getAllCustomers() service executed");
 		return bean.getCustomers();
 	}
 	
@@ -33,6 +38,7 @@ public class CustomerService {
 	@Path("/{id}")
 	@Produces(MediaType.TEXT_XML)
 	public Customer find(@PathParam("id") final String id) {
+		logger.log(Level.INFO, "find() service executed");
 		return bean.findCustomer(id);
 	}
 	
@@ -40,6 +46,7 @@ public class CustomerService {
 	@Path("/json/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Customer findJSon(@PathParam("id") final String id) {
+		logger.log(Level.INFO, "findJSon() service executed");
 		return bean.findCustomer(id);
 	}
 	
