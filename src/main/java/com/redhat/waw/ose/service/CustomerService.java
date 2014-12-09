@@ -38,7 +38,7 @@ public class CustomerService {
 	@Path("/{id}")
 	@Produces(MediaType.TEXT_XML)
 	public Customer find(@PathParam("id") final String id) {
-		logger.log(Level.INFO, "find() service executed");
+		logger.log(Level.INFO, "find(" + id + ") service executed");
 		return bean.findCustomer(id);
 	}
 	
@@ -46,7 +46,7 @@ public class CustomerService {
 	@Path("/json/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Customer findJSon(@PathParam("id") final String id) {
-		logger.log(Level.INFO, "findJSon() service executed");
+		logger.log(Level.INFO, "findJSon(" + id + ") service executed");
 		return bean.findCustomer(id);
 	}
 	
@@ -61,6 +61,7 @@ public class CustomerService {
 		@QueryParam("middlename") final String middlename, @QueryParam("phonenumber") final String phonenumber,
 		@NotNull @QueryParam("postalcode") final String postalcode, @QueryParam("stateprovince") final String stateprovince,
 		@NotNull @QueryParam("streetaddress") final String streetaddress, @QueryParam("streetaddress2") final String streetaddress2) {
+		logger.log(Level.INFO, "add() service executed");
 		Customer c = new Customer();
        	c.setCity(city);	
 		c.setCountry(country);
