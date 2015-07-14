@@ -1,6 +1,7 @@
 package com.redhat.waw.ose.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -47,7 +48,12 @@ public class CustomerListServlet extends HttpServlet {
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//response.setContentType("text/plain");
 		//PrintWriter out = response.getWriter();
-		List<Customer> customers = bean.getCustomers();
+		List<Customer> customers = new ArrayList<Customer>();
+		try {
+			customers = bean.getCustomers();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		//out.println("Customer count: " + customers.size());
 		//int i = 1;
 		//for (Customer customer : customers) {
