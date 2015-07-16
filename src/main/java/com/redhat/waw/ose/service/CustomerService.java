@@ -50,7 +50,7 @@ public class CustomerService {
 		return bean.findCustomer(id);
 	}
 	
-	//http://crm-ose2.redhat.pl/rest/customers/CST00000?city=Warsaw&country=Poland&firstname=Jarek&lastname=Stakun&phonenumber=123456789&postalcode=00-483&stateprovince=mazowieckie&streetaddress=Prusa 2
+	//http://crm.cloudapps.osecloud.com/rest/customers/CST00000?city=Warsaw&country=Poland&firstname=Jarek&lastname=Stakun&phonenumber=123456789&postalcode=00-483&stateprovince=mazowieckie&streetaddress=Prusa 2
 	
 	@PUT
 	//@Path("/{id}")

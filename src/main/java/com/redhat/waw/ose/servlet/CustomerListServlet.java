@@ -54,13 +54,9 @@ public class CustomerListServlet extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		//out.println("Customer count: " + customers.size());
-		//int i = 1;
-		//for (Customer customer : customers) {
-		//	out.println(i + ". " + customer.getFirstname() + " " + customer.getLastname());
-		//	i++;
-		//}
-		//out.close();
+		
+		System.out.println("Customer count: " + customers.size());
+		
 		request.setAttribute("customers", customers);
 		request.getRequestDispatcher("customers.jsp").forward(request, response);
 	}
