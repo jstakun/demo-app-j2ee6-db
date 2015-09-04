@@ -3,6 +3,8 @@ package com.redhat.waw.ose.servlet;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -19,6 +21,9 @@ import com.redhat.waw.ose.model.Customer;
  */
 @WebServlet("/customers")
 public class CustomerListServlet extends HttpServlet {
+	
+	private static final Logger logger = Logger.getLogger(CustomerListServlet.class.getName());
+	
 	private static final long serialVersionUID = 1L;
 	
 	@EJB
@@ -55,7 +60,7 @@ public class CustomerListServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		System.out.println("Customer count: " + customers.size());
+		logger.log(Level.INFO, "Customer count: " + customers.size());
 		
 		request.setAttribute("customers", customers);
 		request.getRequestDispatcher("customers.jsp").forward(request, response);
