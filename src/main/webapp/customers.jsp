@@ -8,7 +8,7 @@
 <title>Top customers</title>
 </head>
 <body>
-   <h3>Top customers list</h3>
+   <h3>Top EMEA customers list</h3>
    <table border="1">
       <tr>
 		  <th>Customer Id</th>
